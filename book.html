@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sisya Comfort is a dedicated learning hub for BCA, BBA, MBA, and MCA students. It provides well-organized notes, essential academic information, and reliable website links in one place. Designed to save time and effort, it helps students focus on learning, preparing for exams, and achieving success with ease.">
+    <link rel="shortcut icon" href="ghg.png" type="image/x-icon">
+    <title>Sisya Comfort: Books Repository</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #fd7e14;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            margin: 50px 0;
+            color: var(--secondary);
+            font-size: 2.5rem;
+        }
+
+        /* Books Section */
+        .books-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            color: var(--secondary);
+            font-size: 2.2rem;
+        }
+
+        .book-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .book-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .book-cover {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .book-details {
+            padding: 25px;
+        }
+
+        .book-details h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .book-details p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background-color: #e06b10;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 10px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+                margin: 30px 0;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .book-list {
+                grid-template-columns: 1fr;
+            }
+
+            .upload-form {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Sisya Comfort</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="book.html" style="background-color: rgba(255, 255, 255, 0.2);">BOOKS</a></li>
+                        <li><a href="studymaterial.html">NOTES</a></li>
+                        <li><a href="virtul campus.html">VIRpus</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Books Repository</h1>
+
+
+        <!-- Books Section -->
+        <section class="books-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Available Books</h2>
+                </div>
+
+                <div class="book-list">
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="book-details">
+                            <h3>HTML and CSS: Design and Build Websites</h3>
+                            <p><strong>Author:</strong> Jon Duckett</p>
+                            <p><strong>Year:</strong> 2011</p>
+                            <p><strong>Subject:</strong> Web Development</p>
+                            <a href="HTML and CSS- Design and Build Websites(Jon Duckett) 2011.pdf"
+                                class="download-btn">Download</a>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="book-details">
+                            <h3>Introduction to Algorithms</h3>
+                            <p><strong>Author:</strong> Thomas H. Cormen</p>
+                            <p><strong>Year:</strong> 2009</p>
+                            <p><strong>Subject:</strong> Computer Science</p>
+                            <a href="#" class="download-btn">Download</a>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="book-details">
+                            <h3>Business Administration</h3>
+                            <p><strong>Author:</strong> John Smith</p>
+                            <p><strong>Year:</strong> 2018</p>
+                            <p><strong>Subject:</strong> Business</p>
+                            <a href="#" class="download-btn">Download</a>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="book-details">
+                            <h3>Database System Concepts</h3>
+                            <p><strong>Author:</strong> Abraham Silberschatz</p>
+                            <p><strong>Year:</strong> 2019</p>
+                            <p><strong>Subject:</strong> Database Management</p>
+                            <a href="#" class="download-btn">Download</a>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="book-details">
+                            <h3>Financial Accounting</h3>
+                            <p><strong>Author:</strong> Robert N. Anthony</p>
+                            <p><strong>Year:</strong> 2015</p>
+                            <p><strong>Subject:</strong> Accounting</p>
+                            <a href="#" class="download-btn">Download</a>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="book-details">
+                            <h3>Programming in C</h3>
+                            <p><strong>Author:</strong> E. Balagurusamy</p>
+                            <p><strong>Year:</strong> 2019</p>
+                            <p><strong>Subject:</strong> Programming</p>
+                            <a href="#" class="download-btn">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-book"></i>
+                    <h3>100+</h3>
+                    <p>Books Available</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-download"></i>
+                    <h3>5,000+</h3>
+                    <p>Downloads</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <h3>2,500+</h3>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>10+</h3>
+                    <p>Subjects Covered</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer  -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Sisya Comfort</h3>
+                        <p>Dedicated to providing the best resources for BBA and BCA students to enhance their learning
+                            experience.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="book.html">Books</a></li>
+                            <li><a href="studymaterial.html">Notes</a></li>
+                            <li><a href="virtul campus.html">VIRpus</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Legal</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Copyright Notice</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Sisya Comfort. All rights reserved. | Designed for BBA and BCA Students</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Simple form submission handling
+            document.querySelectorAll('form').forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Thank you for your submission! In a real application, this would be processed.');
+                    form.reset();
+                });
+            });
+        </script>
+</body>
+
+</html>

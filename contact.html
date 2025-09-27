@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sisya Comfort is a dedicated learning hub for BCA, BBA, MBA, and MCA students. It provides well-organized notes, essential academic information, and reliable website links in one place. Designed to save time and effort, it helps students focus on learning, preparing for exams, and achieving success with ease.">
+    <link rel="shortcut icon" href="ghg.png" type="image/x-icon">
+    <title>Contact Us - Sisya Comfort</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #fd7e14;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            margin: 30px 0 50px;
+            color: var(--secondary);
+            font-size: 2.5rem;
+        }
+
+        /* Contact Sections */
+        .contact-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid #3498db;
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #e06b10;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Feedback Section */
+        .feedback-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .feedback-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .rating-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .rating-input {
+            display: none;
+        }
+
+        .rating-label {
+            cursor: pointer;
+            font-size: 2rem;
+            color: #ddd;
+            transition: color 0.3s ease;
+        }
+
+        .rating-input:checked~.rating-label,
+        .rating-label:hover,
+        .rating-label:hover~.rating-label {
+            color: #ffc107;
+        }
+
+        .rating-input:checked+.rating-label {
+            color: #ffc107;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: #555;
+            line-height: 1.6;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Sisya Comfort</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="book.html">BOOKS</a></li>
+                        <li><a href="studymaterial.html">NOTES</a></li>
+                        <li><a href="virtul campus.html">VIRpus</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html" style="background-color: rgba(255, 255, 255, 0.2);">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Contact Us</h1>
+
+        <!-- Contact Info Section -->
+        <section class="contact-section">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you. Here's how you can reach us.</p>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <img src="v2.png" alt="Vaibhav Kumar">
+                    <h3>Vaibhav Kumar</h3>
+                    <p>Founder & Developer</p>
+                    <p>Sisya Comfort</p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone Number</h3>
+                    <p><a href="tel:+917903604447">+91 7903604447</a></p>
+                    <p>Available: 10 AM - 6 PM (Mon-Sat)</p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Address</h3>
+                    <p><a href="mailto:info@sisyacomfort.com">info@sisyacomfort.com</a></p>
+                    <p><a href="mailto:support@sisyacomfort.com">support@sisyacomfort.com</a></p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3 style="text-align: center; margin-bottom: 20px; color: var(--secondary);">Send us a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="content">Content Suggestion</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section class="feedback-section">
+            <div class="section-header">
+                <h2>Share Your Feedback</h2>
+                <p>We value your opinion. Help us improve by sharing your experience.</p>
+            </div>
+
+            <form class="feedback-form">
+                <div class="form-group">
+                    <label for="feedback-name">Your Name</label>
+                    <input type="text" id="feedback-name">
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback-email">Email Address</label>
+                    <input type="email" id="feedback-email">
+                </div>
+
+                <div class="form-group">
+                    <label>How would you rate your experience with Sisya Comfort?</label>
+                    <div class="rating-group">
+                        <input type="radio" id="star5" name="rating" value="5" class="rating-input">
+                        <label for="star5" class="rating-label">★</label>
+
+                        <input type="radio" id="star4" name="rating" value="4" class="rating-input">
+                        <label for="star4" class="rating-label">★</label>
+
+                        <input type="radio" id="star3" name="rating" value="3" class="rating-input">
+                        <label for="star3" class="rating-label">★</label>
+
+                        <input type="radio" id="star2" name="rating" value="2" class="rating-input">
+                        <label for="star2" class="rating-label">★</label>
+
+                        <input type="radio" id="star1" name="rating" value="1" class="rating-input">
+                        <label for="star1" class="rating-label">★</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback-category">Category</label>
+                    <select id="feedback-category">
+                        <option value="">Select a category</option>
+                        <option value="website">Website Experience</option>
+                        <option value="content">Content Quality</option>
+                        <option value="resources">Study Resources</option>
+                        <option value="navigation">Ease of Use</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback-message">Your Feedback *</label>
+                    <textarea id="feedback-message" placeholder="What did you like? What can we improve?"
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback-suggestion">Suggestions for Improvement</label>
+                    <textarea id="feedback-suggestion"
+                        placeholder="Any specific features or content you'd like to see?"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about Sisya Comfort</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I contribute study materials to Sisya Comfort?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can contribute by using our upload forms on the Books and Study Material pages. We accept
+                            PDFs, documents, and links to valuable resources. All submissions are reviewed before
+                            publishing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is Sisya Comfort completely free for students?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Sisya Comfort is completely free for all students. We believe in making quality
+                            education accessible to everyone without financial barriers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How often is new content added to the platform?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We add new content weekly. Our team regularly updates study materials, books, and resources
+                            to ensure they align with current syllabi and exam patterns.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I request specific study materials?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! You can request specific materials by contacting us through this form or emailing
+                            us directly at requests@sisyacomfort.com. We prioritize requests based on demand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Sisya Comfort</h3>
+                    <p>Dedicated to providing the best resources for BBA and BCA students to enhance their learning experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="book.html">Books</a></li>
+                        <li><a href="studymaterial.html">Notes</a></li>
+                        <li><a href="virtul campus.html">VIRpus</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Copyright Notice</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Sisya Comfort. All rights reserved. | Designed for BBA and BCA Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Star rating functionality
+        document.querySelectorAll('.rating-input').forEach(input => {
+            input.addEventListener('change', () => {
+                // Optional: Add confirmation or visual feedback
+                console.log('Rating selected:', input.value);
+            });
+        });
+
+        // Form submission handling (prevent default for demo)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! In a real application, this would be sent to our server.');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+
+</html>

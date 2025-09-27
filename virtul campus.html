@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sisya Comfort - Explore songs, AI prompts, book insights, and news for BBA and BCA students">
+    <link rel="shortcut icon" href="ghg.png" type="image/x-icon">
+    <title>Sisya Comfort: Explore - Songs, AI Prompts, Books & News</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #fd7e14;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: white;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e06b10;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--secondary);
+            font-size: 2.5rem;
+        }
+
+        /* Song Section */
+        .song-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .song-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .song-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .song-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .song-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .song-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .song-card audio {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 30px;
+        }
+
+        /* AI Prompt Section */
+        .ai-prompt-section {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+        }
+
+        .prompt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .prompt-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .prompt-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .prompt-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .prompt-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .prompt-text {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Know About Book Section */
+        .book-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .book-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .book-content {
+            padding: 25px;
+        }
+
+        .book-content h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .book-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .book-rating {
+            color: #ffc107;
+        }
+
+        /* News Section */
+        .news-section {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-content h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            min-width: 250px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .newsletter-form input {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Sisya Comfort</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="book.html">BOOKS</a></li>
+                        <li><a href="studymaterial.html">NOTES</a></li>
+                        <li><a href="virtul campus.html" style="background-color: rgba(255, 255, 255, 0.2);">VIRpus</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Explore More with Sisya Comfort</h2>
+                <p>Discover songs for focus, AI prompts for learning, book insights, and the latest education news.</p>
+                <a href="#song-section" class="btn">Start Exploring</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Song Section -->
+    <section class="song-section" id="song-section">
+        <div class="container">
+            <h2 class="section-title">Focus & Study Songs</h2>
+            <div class="song-grid">
+                <div class="song-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Relax Mind</h3>
+                    <p>This song helps to relax when you are stressed</p>
+                    <audio controls>
+                        <source src="Adharam_Madhuram__Slow___Reverb____Krishna_Bhajan___Bhakti_Song___Bhajan_Song___Madhurashtakam_Lofi(128k).mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="song-card">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Focus to think</h3>
+                    <p>This song helps to improved thinking capability.</p>
+                    <audio controls>
+                        <source src="om.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="song-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Brainwave Focus</h3>
+                    <p>Binaural beats and isochronic tones designed to optimize learning states.</p>
+                    <audio controls>
+                        <source src="#" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Prompt Section -->
+    <section class="ai-prompt-section">
+        <div class="container">
+            <h2 class="section-title">AI Learning Prompts</h2>
+            <div class="prompt-grid">
+                <div class="prompt-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Study Assistance</h3>
+                    <p>Use these prompts with AI tools to enhance your learning:</p>
+                    <div class="prompt-text">
+                        "Explain [complex topic] in simple terms with real-world examples relevant to business/computer applications."
+                    </div>
+                    <button class="btn copy-btn" data-prompt="Explain [complex topic] in simple terms with real-world examples relevant to business/computer applications.">Copy Prompt</button>
+                </div>
+                <div class="prompt-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Problem Solving</h3>
+                    <p>Prompts to help with assignments and projects:</p>
+                    <div class="prompt-text">
+                        "Create a step-by-step solution for [problem statement] showing the methodology and reasoning."
+                    </div>
+                    <button class="btn copy-btn" data-prompt="Create a step-by-step solution for [problem statement] showing the methodology and reasoning.">Copy Prompt</button>
+                </div>
+                <div class="prompt-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Exam Preparation</h3>
+                    <p>AI prompts tailored for exam success:</p>
+                    <div class="prompt-text">
+                        "Generate practice questions for [subject/topic] with varying difficulty levels and provide model answers."
+                    </div>
+                    <button class="btn copy-btn" data-prompt="Generate practice questions for [subject/topic] with varying difficulty levels and provide model answers.">Copy Prompt</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Know About Book Section -->
+    <section class="book-section">
+        <div class="container">
+            <h2 class="section-title">Know About Books</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business Book">
+                    <div class="book-content">
+                        <h3>Business Fundamentals</h3>
+                        <div class="book-meta">
+                            <span>By John Management</span>
+                            <span class="book-rating">★★★★☆</span>
+                        </div>
+                        <p>A comprehensive guide to essential business concepts for BBA students, covering marketing, finance, and operations.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Programming Book">
+                    <div class="book-content">
+                        <h3>Programming Principles</h3>
+                        <div class="book-meta">
+                            <span>By Sarah Coder</span>
+                            <span class="book-rating">★★★★★</span>
+                        </div>
+                        <p>Master the fundamentals of programming with this hands-on guide perfect for BCA students learning their first languages.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Data Structures Book">
+                    <div class="book-content">
+                        <h3>Data Structures Made Easy</h3>
+                        <div class="book-meta">
+                            <span>By Alex Algorithm</span>
+                            <span class="book-rating">★★★★☆</span>
+                        </div>
+                        <p>Simplified explanations and visual examples to help BCA students understand complex data structures and algorithms.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <h2 class="section-title">Education News</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Education News">
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span>June 15, 2023</span>
+                            <span>Higher Education</span>
+                        </div>
+                        <h3>New Curriculum Updates for BBA Programs</h3>
+                        <p>Universities are revising BBA curricula to include more digital marketing and analytics components to match industry demands.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Read More</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tech News">
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span>June 10, 2023</span>
+                            <span>Technology</span>
+                        </div>
+                        <h3>AI Tools Transforming Computer Education</h3>
+                        <p>How artificial intelligence is being integrated into BCA programs to enhance learning outcomes and prepare students for tech careers.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Read More</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Career News">
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span>June 5, 2023</span>
+                            <span>Career Guidance</span>
+                        </div>
+                        <h3>Top Career Paths for BBA & BCA Graduates in 2023</h3>
+                        <p>Exploring the most promising career opportunities and emerging job roles for business and computer application graduates.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter to receive the latest study materials, exam tips, and academic resources directly in your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Sisya Comfort</h3>
+                    <p>Dedicated to providing the best resources for BBA and BCA students to enhance their learning experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="book.html">Books</a></li>
+                        <li><a href="studymaterial.html">Notes</a></li>
+                        <li><a href="virtul campus.html">VIRpus</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Copyright Notice</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Sisya Comfort. All rights reserved. | Designed for BBA and BCA Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your submission! In a real application, this would be processed.');
+                form.reset();
+            });
+        });
+
+        // Copy prompt functionality
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const promptText = this.getAttribute('data-prompt');
+                navigator.clipboard.writeText(promptText).then(() => {
+                    const originalText = this.textContent;
+                    this.textContent = 'Copied!';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
